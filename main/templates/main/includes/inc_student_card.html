@@ -12,6 +12,8 @@
 
             <h2>{{ object.first_name | title }} {{ object.surname | title}}</h2>
             <p><a class="btn btn-secondary" href="{% url 'main:student_item' object.pk %}">Посмотреть &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="{% url 'main:student_item' object.pk %}">Редактировать &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="{% url 'main:student_item' object.pk %}">Удалить &raquo;</a></p>
         </div>
     </div>
 </div><!-- /.col-lg-4 -->

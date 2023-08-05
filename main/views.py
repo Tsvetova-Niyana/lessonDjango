@@ -1,12 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from main.models import Student
-
-
-class StudentListView(ListView):
-    model = Student
-    template_name = "main/index.html"
 
 
 def index(request):
@@ -18,24 +13,25 @@ def index(request):
     return render(request, "main/index.html", context)
 
 
-def students(request):
-    context = {
-        'objects_list': Student.objects.all(),
-        'title': 'Список студентов'
-    }
-
-    return render(request, "main/students.html", context)
+class StudentListView(ListView):
+    model = Student
+    template_name = 'main/students.html'
 
 
-def student(request, pk):
-    student_item = Student.objects.get(pk=pk)
+class StudentDetailView(DetailView):
+    model = Student
+    template_name = 'main/student.html'
 
-    context = {
-        'object': student_item,
-        'title': student_item
-    }
 
-    return render(request, 'main/student.html', context)
+# def student(request, pk):
+#     student_item = Student.objects.get(pk=pk)
+#
+#     context = {
+#         'object': student_item,
+#         'title': student_item
+#     }
+#
+#     return render(request, 'main/student.html', context)
 
 
 def contacts(request):

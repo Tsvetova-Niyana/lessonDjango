@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="col">
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <td>Материал</td>
+                    <td>{{ object.title }}</td>
+                </tr>
+                <tr>
+                    <td>Содержание</td>
+                    <td>{{ object.body }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'materials:list' %}" class="btn btn-primary"> << Назад </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
