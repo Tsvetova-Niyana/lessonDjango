@@ -9,6 +9,10 @@
                     <td>Материал</td>
                     <td>{{ object.title }}</td>
                 </tr>
+                  <tr>
+                    <td>Slug</td>
+                    <td>{{ object.slug }}</td>
+                </tr>
                 <tr>
                     <td>Содержание</td>
                     <td>{{ object.body }}</td>
@@ -16,6 +20,7 @@
             </table>
         </div>
         <div class="card-footer">
+            Просмотры: {{ object.views_count }}<br><br>
             <a href="{% url 'materials:list' %}" class="btn btn-primary"> << Назад </a>
         </div>
     </div>

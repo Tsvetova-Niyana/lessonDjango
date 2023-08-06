@@ -6,6 +6,10 @@
         <div class="card-body">
             <table class="table">
                 <tr>
+                    <td width="250"><img class="rounded-circle" width="200" height="140" src="/media/{{ object.avatar }}"></td>
+                    <td></td>
+                </tr>
+                <tr>
                     <td>Имя</td>
                     <td>{{ object.first_name }}</td>
                 </tr>
@@ -13,6 +17,7 @@
                     <td>Фамилия</td>
                     <td>{{ object.surname }}</td>
                 </tr>
+
             </table>
         </div>
         <div class="card-footer">
