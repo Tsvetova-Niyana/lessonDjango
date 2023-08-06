@@ -8,5 +8,10 @@
             <p><a class="btn btn-secondary" href="{% url 'main:update' object.pk%}">Редактировать &raquo;</a></p>
             <p><a class="btn btn-secondary" href="{% url 'main:delete' object.pk %}">Удалить &raquo;</a></p>
         </div>
+        {% if object.is_active %}
+            <a class="btn btn-warning" href="{% url 'main:activity_student' object.pk %}">Деактивировать</a>
+        {% else %}
+            <a class="btn btn-success" href="{% url 'main:activity_student' object.pk %}">Активировать</a>
+        {% endif %}
     </div>
 </div><!-- /.col-lg-4 -->
